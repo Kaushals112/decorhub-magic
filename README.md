@@ -1,69 +1,105 @@
-# Welcome to your Lovable project
 
-## Project info
+# Vikash Vatika Decoration
 
-**URL**: https://lovable.dev/projects/7d3d6115-1dd6-45fe-9d6d-807acd093929
+A flower and balloon decoration company website built with React and Django.
 
-## How can I edit this code?
+## Prerequisites
 
-There are several ways of editing your application.
+Before you begin, ensure you have the following installed:
+- Node.js (v16 or later)
+- Python (3.8 or later)
+- MongoDB (Install from [MongoDB website](https://www.mongodb.com/try/download/community))
 
-**Use Lovable**
+## Setup Instructions
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/7d3d6115-1dd6-45fe-9d6d-807acd093929) and start prompting.
+### Step 1: Start MongoDB
 
-Changes made via Lovable will be committed automatically to this repo.
+Make sure MongoDB service is running on your system. The default connection URL is `mongodb://localhost:27017`.
 
-**Use your preferred IDE**
+### Step 2: Set up the Django Backend
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+1. Navigate to the backend directory:
+   ```
+   cd backend
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+2. Create a virtual environment (optional but recommended):
+   ```
+   python -m venv venv
+   ```
 
-Follow these steps:
+3. Activate the virtual environment:
+   - On Windows:
+     ```
+     venv\Scripts\activate
+     ```
+   - On macOS/Linux:
+     ```
+     source venv/bin/activate
+     ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+4. Install required packages:
+   ```
+   pip install -r requirements.txt
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+5. Run migrations:
+   ```
+   python manage.py makemigrations
+   python manage.py migrate
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+6. Create a superuser to access the admin panel:
+   ```
+   python manage.py createsuperuser
+   ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+7. Run the development server:
+   ```
+   python manage.py runserver
+   ```
 
-**Edit a file directly in GitHub**
+8. The Django backend will be running at:
+   ```
+   http://localhost:8000/
+   ```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+9. Access the Django admin panel at:
+   ```
+   http://localhost:8000/admin/
+   ```
 
-**Use GitHub Codespaces**
+### Step 3: Set up the React Frontend
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. Open a new terminal and navigate to the project root
 
-## What technologies are used for this project?
+2. Install required packages:
+   ```
+   npm install
+   ```
 
-This project is built with .
+3. Run the development server:
+   ```
+   npm run dev
+   ```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+4. The React frontend will be running at:
+   ```
+   http://localhost:8080/
+   ```
 
-## How can I deploy this project?
+## Accessing the Admin Interface
 
-Simply open [Lovable](https://lovable.dev/projects/7d3d6115-1dd6-45fe-9d6d-807acd093929) and click on Share -> Publish.
+There are two admin interfaces:
 
-## I want to use a custom domain - is that possible?
+1. **Django Admin**: Access at `http://localhost:8000/admin/` using the superuser credentials you created.
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+2. **React Admin Dashboard**: Access at `http://localhost:8080/admin` using:
+   - Email: admin@vikashvatika.com
+   - Password: admin123
+
+## Important Notes
+
+- The API endpoints are available at `http://localhost:8000/api/`
+- Make sure both the frontend and backend servers are running simultaneously
+- Upload product images through the Django admin interface

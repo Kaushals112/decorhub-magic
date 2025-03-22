@@ -73,8 +73,11 @@ WSGI_APPLICATION = 'vikash_vatika.wsgi.application'
 # Database
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'vikash_vatika_db',
+        'CLIENT': {
+            'host': 'mongodb://localhost:27017',
+        }
     }
 }
 
@@ -133,6 +136,7 @@ SIMPLE_JWT = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # Vite default port
     "http://localhost:3000",
+    "http://localhost:8080",  # Current Vite configuration port
 ]
 
 CORS_ALLOW_CREDENTIALS = True

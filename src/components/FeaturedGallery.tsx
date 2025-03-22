@@ -60,9 +60,9 @@ const FeaturedGallery: React.FC = () => {
     : galleryItems.filter(item => item.category === activeCategory);
     
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 celebration-pattern">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 wedding-flowers">
       <div className="container mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-12 wedding-decor">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4">
             Our Gallery
           </h2>
@@ -93,7 +93,7 @@ const FeaturedGallery: React.FC = () => {
           {filteredItems.map((item) => (
             <div 
               key={item.id}
-              className="group relative rounded-lg overflow-hidden h-80 bg-gray-100 shadow-md transition-all animate-zoom-in"
+              className="group relative rounded-lg overflow-hidden h-80 bg-gray-100 shadow-md transition-all animate-zoom-in wedding-shadow"
               onMouseEnter={() => setHoveredItem(item.id)}
               onMouseLeave={() => setHoveredItem(null)}
             >
@@ -121,7 +121,7 @@ const FeaturedGallery: React.FC = () => {
             onClick={() => navigate("/gallery")}
             variant="outline"
             size="lg"
-            className="font-medium btn-hover glass"
+            className="font-medium btn-hover glass border-primary/20 text-primary hover:text-primary/80 hover:bg-primary/5"
           >
             View Full Gallery
           </Button>

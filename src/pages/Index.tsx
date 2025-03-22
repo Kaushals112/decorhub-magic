@@ -72,14 +72,14 @@ const Index: React.FC = () => {
   const navigate = useNavigate();
   
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <Navbar />
       
       {/* Hero Section */}
       <Hero />
       
       {/* Features */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 section-bg-pattern">
         <div className="container mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4">
@@ -115,7 +115,7 @@ const Index: React.FC = () => {
             ].map((feature, index) => (
               <div 
                 key={index}
-                className="p-6 text-center rounded-lg border border-gray-100 bg-white shadow-sm hover:shadow-md transition-all animate-fade-in"
+                className="p-6 text-center rounded-lg glass hover:shadow-md transition-all animate-fade-in"
               >
                 <div className="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-sage-100 text-primary mb-6">
                   <feature.icon className="h-8 w-8" />
@@ -129,7 +129,7 @@ const Index: React.FC = () => {
       </section>
       
       {/* Featured Services */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-sage-50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 section-bg-gradient">
         <div className="container mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4">
@@ -162,7 +162,7 @@ const Index: React.FC = () => {
       <FeaturedGallery />
       
       {/* Testimonials */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 section-bg-waves">
         <div className="container mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4">
